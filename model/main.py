@@ -42,8 +42,8 @@ def get_clean_data():
     # 从指定路径读取CSV格式的原始数据
     data = pd.read_csv("../data/data.csv")
 
-    # 删除无用的列 "Unnamed: 32"，这通常是导入时产生的空列
-    data = data.drop(["Unnamed: 32"], axis=1)
+    # 删除无用的列, "Unnamed: 32"这通常是导入时产生的空列, "id"
+    data = data.drop(["Unnamed: 32", "id"], axis=1)
 
     # 将目标列 "diagnosis" 的字符标签映射为数值：
     # 'M' (恶性 Malignant) -> 1
